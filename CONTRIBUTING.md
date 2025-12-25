@@ -115,7 +115,7 @@ If any command fails or shows a lower version, install or update that tool befor
 
 2. **Clone your fork**
    ```bash
-   git clone https://github.com/opencodeiiita/blob.git
+   git clone https://github.com/<your-username>/blob.git
    cd blob
    ```
 
