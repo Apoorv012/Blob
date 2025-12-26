@@ -14,4 +14,8 @@ export const CONTRIBUTORS: Contributor[] = [
     name: 'Ashutosh kesarwani',
     github: 'Lucifer-0612',
   },
+  {
+    name: 'Harshvardhan',
+    github: '@HARSH4885-svg',
+  },
 ]
