@@ -1,12 +1,17 @@
 import '../global.css';
 
-import { Stack } from 'expo-router';
+import { StatusBar } from 'react-native';
+import { Slot } from 'expo-router';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { TRPCProvider } from '@/utils/TRPCProvider';
 
-export default function Layout() {
+export default function RootLayout() {
   return (
-    <TRPCProvider>
-      <Stack />
-    </TRPCProvider>
+    <SafeAreaProvider>
+      <TRPCProvider>
+        <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+        <Slot />
+      </TRPCProvider>
+    </SafeAreaProvider>
   );
 }
