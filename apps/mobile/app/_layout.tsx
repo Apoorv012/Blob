@@ -1,12 +1,12 @@
 import '../global.css';
 
-import { Stack } from 'expo-router';
+import { Slot } from 'expo-router';
 import { TRPCProvider } from '@/utils/TRPCProvider';
 
-export default function Layout() {
+export default function RootLayout() {
   return (
     <TRPCProvider>
-      <Stack />
+      <Slot />
     </TRPCProvider>
   );
 }
