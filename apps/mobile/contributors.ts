@@ -78,5 +78,9 @@ export const CONTRIBUTORS: Contributor[] = [
     name: 'Riya Ghoshi',
     github: 'riya-ctrl376',
   }
+  {
+    name: 'Kamakshi Gupta',
+    github: '29kamakshigupta',
+  },
 
 ];
