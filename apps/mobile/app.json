@@ -30,18 +30,13 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.soham.blob"
+      "supportsTablet": true
     },
     "android": {
-      "package": "com.soham.blob",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
-    },
-    "extra": {
-      "googleAndroidClientId": ""
     }
   }
 }
