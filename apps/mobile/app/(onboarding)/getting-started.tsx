@@ -100,7 +100,7 @@ export default function GettingStartedScreen() {
             <Text
               className="mb-4 px-6 text-center text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"
             >
-              Learn Smarter with <Text className="text-orange-500">Blob</Text>
+              Learn Smarter with <Text className="text-orange-500">Blobs</Text>
             </Text>
           </Animated.View>
 
@@ -119,7 +119,10 @@ export default function GettingStartedScreen() {
           style={{ transform: [{ scale: buttonScale }], opacity: buttonOpacity }}>
           <Pressable
             className="mb-4 h-14 items-center justify-center rounded-2xl bg-orange-500 shadow-lg shadow-orange-200 active:bg-orange-600"
-            onPress={() => router.push('/(onboarding)/login')}>
+            onPress={() => {
+              console.log("[GETTING STARTED] button pressed\n");
+              router.push('/(onboarding)/login');
+            }}>
             <View className="flex-row items-center">
               <Text className="mr-2 text-lg font-bold text-white">Get Started</Text>
               <Ionicons name="arrow-forward" size={20} color="white" />
