@@ -128,6 +128,10 @@ export const CONTRIBUTORS: Contributor[] = [
   {
   name: "Dharshini D",
   github: 'Dharshin1',
+  },
+  {
+  name: "Sourish Awasthi",
+  github: 'Sourish-Awasthi',
   }
 
 ];
