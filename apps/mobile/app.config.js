@@ -29,11 +29,15 @@ module.exports = ({ config }) => {
       },
       orientation: 'portrait',
       icon: './assets/icon.png',
-      userInterfaceStyle: 'light',
+      userInterfaceStyle: 'automatic',
       splash: {
-        image: './assets/icon.png',
+        image: './assets/adaptive-icon.png',
         resizeMode: 'contain',
         backgroundColor: '#ffffff',
+        dark: {
+          image: './assets/adaptive-icon.png',
+          backgroundColor: '#000000'
+        }
       },
       assetBundlePatterns: ['**/*'],
       ios: {
