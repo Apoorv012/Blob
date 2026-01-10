@@ -1,8 +1,9 @@
 import { z } from "zod";
 import { router, publicProcedure, secureProcedure } from "../server.js";
-import { oauthAccounts, users } from "@blob/db/schema";
+import { TRPCError } from "@trpc/server";
+import { oauthAccounts, users, topics } from "@blob/db/schema";
 import { OAuth2Client } from "google-auth-library";
-import { eq } from "drizzle-orm";
+import { eq, and } from "drizzle-orm";
 import jwt from "jsonwebtoken";
 
 const client = new OAuth2Client();
@@ -137,6 +138,36 @@ export const appRouter = router({
 
     return { user };
   }),
+
+  // Get all topics for the authenticated user
+  getTopics: secureProcedure.query(async ({ ctx }) => {
+    const topicsList = await ctx.db
+      .select()
+      .from(topics)
+      .where(eq(topics.userId, ctx.userId));
+
+    return { topics: topicsList };
+  }),
+
+  // Get a single topic by ID (only if owned by the user)
+  getTopic: secureProcedure
+    .input(z.object({ topicId: z.string().uuid() }))
+    .query(async ({ input, ctx }) => {
+      const [topic] = await ctx.db
+        .select()
+        .from(topics)
+        .where(and(eq(topics.id, input.topicId), eq(topics.userId, ctx.userId)))
+        .limit(1);
+
+      if (!topic) {
+        throw new TRPCError({
+          code: "NOT_FOUND",
+          message: "Topic not found or you don't have access to it",
+        });
+      }
+
+      return { topic };
+    }),
 });
 
 export type AppRouter = typeof appRouter;
