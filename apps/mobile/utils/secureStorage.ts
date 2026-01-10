@@ -27,3 +27,7 @@ export async function getUser(): Promise<{ id: string; name: string; email: stri
 export async function deleteUser(): Promise<void> {
   await SecureStore.deleteItemAsync(USER_KEY);
 }
+
+export async function clearAuth(): Promise<void> {
+  await Promise.all([deleteToken(), deleteUser()]);
+}

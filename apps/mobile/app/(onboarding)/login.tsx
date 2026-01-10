@@ -134,7 +134,7 @@ export default function LoginScreen() {
         });
       }
 
-      router.push('/(tabs)/home');
+      router.replace('/(tabs)/home');
     } catch (error) {
       console.error('Sign-in error:', error);
       Alert.alert('Sign-In Error', 'Failed to sign in with Google. Please try again.');
