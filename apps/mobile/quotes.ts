@@ -1,4 +1,19 @@
+// apps/mobile/quotes.ts
+
 export const quotes: string[] = [
+  // Your motivational quotes
+  "Good things take time.",
+  "One step at a time.",
+  "Progress, not perfection.",
+  "Loading… greatness takes patience.",
+  "Every moment counts.",
+  "Small waits lead to big results.",
+  "Focus. Breathe. Continue.",
+  "Building something meaningful for you.",
+  "Almost there, stay with us.",
+  "Patience is part of the process.",
+
+  // Existing programming/loading quotes
   "The code you write makes you a programmer. The code you delete makes you a good one.",
   "Programming isn't about what you know; it's about what you can figure out.",
   "Talk is cheap. Show me the code.",
